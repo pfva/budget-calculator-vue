@@ -2,7 +2,7 @@
   <div class="row justify-content-center">
     <div class="col-12 col-md-8">
       <h1 class="o-siteheader text-center">{{ title }}</h1>
-      <p class="o-siteheader__subtext lead text-center">{{ subtext }}</p>
+      <p class="o-siteheader__subtext text-center">{{ subtext }}</p>
     </div>
   </div>
 </template>
@@ -38,6 +38,7 @@ export default {
     color: $text-color;
     font-family: $category-font-family;
     font-size: 16px;
+    font-weight: 300;
     margin-bottom: $spacing * 8;
 
     @media (min-width: 768px) {

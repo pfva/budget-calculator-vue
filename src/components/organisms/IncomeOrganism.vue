@@ -2,16 +2,28 @@
   <div class="row justify-content-center">
     <div class="o-income col-12 col-md-8">
       <IncomeHeadingAtom/>
+      <IncomeCategoryMolecule
+        v-for="category in incomeCategories"
+        v-bind:key="category"
+        v-bind:category="category"
+      />
     </div>
   </div>
 </template>
 
 <script>
 import IncomeHeadingAtom from "../../components/atoms/IncomeHeadingAtom.vue";
+import IncomeCategoryMolecule from "../../components/molecules/IncomeCategoryMolecule.vue";
 
 export default {
   components: {
-    IncomeHeadingAtom
+    IncomeHeadingAtom,
+    IncomeCategoryMolecule
+  },
+  data: function() {
+    return {
+      incomeCategories: ["Salary", "Benefits", "Other Income"]
+    };
   }
 };
 </script>
