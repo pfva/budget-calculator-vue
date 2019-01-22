@@ -7,6 +7,7 @@
         v-bind:key="category"
         v-bind:category="category"
       />
+      <IncomeTotalMolecule/>
     </div>
   </div>
 </template>
@@ -14,11 +15,13 @@
 <script>
 import IncomeHeadingAtom from "../../components/atoms/IncomeHeadingAtom.vue";
 import IncomeCategoryMolecule from "../../components/molecules/IncomeCategoryMolecule.vue";
+import IncomeTotalMolecule from "../../components/molecules/IncomeTotalMolecule.vue";
 
 export default {
   components: {
     IncomeHeadingAtom,
-    IncomeCategoryMolecule
+    IncomeCategoryMolecule,
+    IncomeTotalMolecule
   },
   data: function() {
     return {
