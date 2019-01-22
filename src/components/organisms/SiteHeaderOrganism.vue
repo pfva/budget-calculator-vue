@@ -1,12 +1,10 @@
 <template>
-  <header class="container-fluid o-header">
-    <div class="row justify-content-center">
-      <div class="col-12 col-md-8">
-        <h1 class="o-siteheader text-center">{{ title }}</h1>
-        <p class="o-siteheader__subtext lead text-center">{{ subtext }}</p>
-      </div>
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-8">
+      <h1 class="o-siteheader text-center">{{ title }}</h1>
+      <p class="o-siteheader__subtext lead text-center">{{ subtext }}</p>
     </div>
-  </header>
+  </div>
 </template>
 
 <script>
@@ -21,8 +19,8 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-@import "../../scss/main.scss";
+<style lang="scss">
+@import "../../../scss/main.scss";
 .o-siteheader {
   color: $white;
   font-family: $heading-font-family;
@@ -37,7 +35,7 @@ export default {
   }
 
   &__subtext {
-    color: $white;
+    color: $text-color;
     font-family: $category-font-family;
     font-size: 16px;
     margin-bottom: $spacing * 8;
