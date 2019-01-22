@@ -10,6 +10,10 @@
       <IncomeOrganism/>
       <ExpensesOrganism/>
     </main>
+
+    <footer class="container-fluid footer o-footer">
+      <FooterOrganism/>
+    </footer>
   </div>
 </template>
 
@@ -18,6 +22,7 @@
 import SiteHeaderOrganism from "./components/organisms/SiteHeaderOrganism.vue";
 import IncomeOrganism from "./components/organisms/IncomeOrganism.vue";
 import ExpensesOrganism from "./components/organisms/ExpensesOrganism.vue";
+import FooterOrganism from "./components/organisms/FooterOrganism.vue";
 
 export default {
   name: "app",
@@ -25,7 +30,8 @@ export default {
     // HelloWorld,
     SiteHeaderOrganism,
     IncomeOrganism,
-    ExpensesOrganism
+    ExpensesOrganism,
+    FooterOrganism
   }
 };
 </script>
