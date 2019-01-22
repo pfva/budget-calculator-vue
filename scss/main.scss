@@ -6,3 +6,6 @@
 @import 'objects/objects.main'; // Design-free objects, abstractions and patterns (.o-)
 // @import "components/components.main";       // Components and widgets
 @import 'utilities/utilities.main'; // Helper classes and overrides (.u-)
+
+// This is the ITCSS architecture minus the 'components' directory
+// since we're using Single File Components in this project

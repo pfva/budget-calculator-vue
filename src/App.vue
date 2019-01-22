@@ -8,6 +8,7 @@
 
     <main class="container flex-shrink-0">
       <IncomeOrganism/>
+      <ExpensesOrganism/>
     </main>
   </div>
 </template>
@@ -16,13 +17,15 @@
 // import HelloWorld from "./components/HelloWorld.vue";
 import SiteHeaderOrganism from "./components/organisms/SiteHeaderOrganism.vue";
 import IncomeOrganism from "./components/organisms/IncomeOrganism.vue";
+import ExpensesOrganism from "./components/organisms/ExpensesOrganism.vue";
 
 export default {
   name: "app",
   components: {
     // HelloWorld,
     SiteHeaderOrganism,
-    IncomeOrganism
+    IncomeOrganism,
+    ExpensesOrganism
   }
 };
 </script>
