@@ -2,11 +2,7 @@
   <div class="row justify-content-center">
     <div class="o-income col-12 col-md-8">
       <IncomeHeadingAtom/>
-      <IncomeCategoryMolecule
-        v-for="category in incomeCategories"
-        v-bind:key="category"
-        v-bind:category="category"
-      />
+      <IncomeCategoryMolecule v-bind:categories="incomeCategories"/>
       <IncomeTotalMolecule/>
     </div>
   </div>
@@ -23,7 +19,7 @@ export default {
     IncomeCategoryMolecule,
     IncomeTotalMolecule
   },
-  data: function() {
+  data() {
     return {
       incomeCategories: ["Salary", "Benefits", "Other Income"]
     };

@@ -1,23 +1,25 @@
 <template>
-  <div class="m-category">
-    <p class="m-category__title">{{ title }}</p>
-    <input
-      type="number"
-      class="m-category__input m-category__input--income form-control text-right"
-      placeholder="$"
-      aria-label="Sum input"
-    >
+  <div>
+    <template v-for="category in categories">
+      <div class="m-category" v-bind:key="category">
+        <p class="m-category__title">{{ category }}</p>
+        <input
+          type="number"
+          class="m-category__input m-category__input--income form-control text-right"
+          placeholder="$"
+          aria-label="Sum input"
+        >
+      </div>
+    </template>
   </div>
 </template>
 
 <script>
 export default {
-  data: function() {
-    return {
-      title: this.category
-    };
+  data() {
+    return {};
   },
-  props: ["category"]
+  props: ["categories"]
 };
 </script>
 
