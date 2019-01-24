@@ -7,6 +7,7 @@
     <main class="container flex-shrink-0">
       <IncomeOrganism/>
       <ExpensesOrganism/>
+      <CalculateOrganism/>
     </main>
 
     <footer class="container-fluid footer o-footer">
@@ -19,6 +20,7 @@
 import SiteHeaderOrganism from "./components/organisms/SiteHeaderOrganism.vue";
 import IncomeOrganism from "./components/organisms/IncomeOrganism.vue";
 import ExpensesOrganism from "./components/organisms/ExpensesOrganism.vue";
+import CalculateOrganism from "./components/organisms/CalculateOrganism.vue";
 import FooterOrganism from "./components/organisms/FooterOrganism.vue";
 
 export default {
@@ -27,6 +29,7 @@ export default {
     SiteHeaderOrganism,
     IncomeOrganism,
     ExpensesOrganism,
+    CalculateOrganism,
     FooterOrganism
   }
 };
