@@ -2,7 +2,7 @@
   <div class="row justify-content-center">
     <div class="col-12 col-md-8 p-4 p-md-0">
       <ButtonAtom/>
-      <CalculateTextAtom/>
+      <CalculateTextAtom v-bind:sum="sum"/>
     </div>
   </div>
 </template>
@@ -15,7 +15,8 @@ export default {
   components: {
     ButtonAtom,
     CalculateTextAtom
-  }
+  },
+  props: ["sum"]
 };
 </script>
 

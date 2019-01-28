@@ -7,7 +7,7 @@
     <main class="container flex-shrink-0">
       <IncomeOrganism v-on:totalIncome="addToIncome"/>
       <ExpensesOrganism v-on:totalExpenses="addToExpenses"/>
-      <CalculateOrganism/>
+      <CalculateOrganism v-bind:sum="incomeMinusExpenses"/>
     </main>
 
     <footer class="container-fluid footer o-footer">

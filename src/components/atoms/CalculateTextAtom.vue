@@ -1,9 +1,9 @@
 <template>
   <div>
-    <div v-if="totalSum >= 0" class="a-calculatetext a-calculatetext-positive">
+    <div v-if="sum >= 0" class="a-calculatetext a-calculatetext-positive">
       <p class="a-calculatetext__main">
         You have
-        <span class="a-calculatetext__main--sum-positive">$ {{ totalSum }}</span> left each month
+        <span class="a-calculatetext__main--sum-positive">$ {{ sum }}</span> left each month
       </p>
       <p class="a-calculatetext__subtext">
         Good job, keep it up!
@@ -16,7 +16,7 @@
     <div v-else class="a-calculatetext a-calculatetext-negative">
       <p class="a-calculatetext__main">
         You're spending
-        <span class="a-calculatetext__main--sum-negative">$ {{ totalSum }}</span> more than you earn each month
+        <span class="a-calculatetext__main--sum-negative">$ {{ sum }}</span> more than you earn each month
       </p>
       <p class="a-calculatetext__subtext">
         Try to lower your expenses!
@@ -32,10 +32,9 @@
 <script>
 export default {
   data() {
-    return {
-      totalSum: 1
-    };
-  }
+    return {};
+  },
+  props: ["sum"]
 };
 </script>
 
