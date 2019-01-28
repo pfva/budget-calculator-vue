@@ -8,6 +8,7 @@
       <IncomeOrganism v-on:totalIncome="addToIncome"/>
       <ExpensesOrganism v-on:totalExpenses="addToExpenses"/>
       <CalculateOrganism v-bind:sum="incomeMinusExpenses"/>
+      <ChartOrganism/>
     </main>
 
     <footer class="container-fluid footer o-footer">
@@ -21,6 +22,7 @@ import SiteHeaderOrganism from "./components/organisms/SiteHeaderOrganism.vue";
 import IncomeOrganism from "./components/organisms/IncomeOrganism.vue";
 import ExpensesOrganism from "./components/organisms/ExpensesOrganism.vue";
 import CalculateOrganism from "./components/organisms/CalculateOrganism.vue";
+import ChartOrganism from "./components/organisms/ChartOrganism.vue";
 import FooterOrganism from "./components/organisms/FooterOrganism.vue";
 
 export default {
@@ -30,6 +32,7 @@ export default {
     IncomeOrganism,
     ExpensesOrganism,
     CalculateOrganism,
+    ChartOrganism,
     FooterOrganism
   },
   data() {
