@@ -5,8 +5,8 @@
     </header>
 
     <main class="container flex-shrink-0">
-      <IncomeOrganism/>
-      <ExpensesOrganism/>
+      <IncomeOrganism v-on:totalIncome="addToIncome"/>
+      <ExpensesOrganism v-on:totalExpenses="addToExpenses"/>
       <CalculateOrganism/>
     </main>
 
@@ -31,6 +31,26 @@ export default {
     ExpensesOrganism,
     CalculateOrganism,
     FooterOrganism
+  },
+  data() {
+    return {
+      income: 0,
+      expenses: 0,
+      incomeMinusExpenses: 0
+    };
+  },
+  methods: {
+    addToIncome(value) {
+      this.income = value;
+      this.calculateIncomeMinusExpenses();
+    },
+    addToExpenses(value) {
+      this.expenses = value;
+      this.calculateIncomeMinusExpenses();
+    },
+    calculateIncomeMinusExpenses() {
+      this.incomeMinusExpenses = this.income - this.expenses;
+    }
   }
 };
 </script>

@@ -62,6 +62,7 @@ export default {
         summedValues += object.value;
       }
       this.totalValues = summedValues;
+      this.$emit("totalIncome", this.totalValues);
     }
   }
 };
