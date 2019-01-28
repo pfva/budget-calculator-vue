@@ -1,25 +1,34 @@
 <template>
-  <div>
-    <template v-for="category in categories">
-      <div class="m-category" v-bind:key="category">
-        <p class="m-category__title">{{ category }}</p>
-        <input
-          type="number"
-          class="m-category__input m-category__input--income form-control text-right"
-          placeholder="$"
-          aria-label="Sum input"
-        >
-      </div>
-    </template>
+  <div class="m-category">
+    <p class="m-category__title">{{ payload.title }}</p>
+    <input
+      v-on:input="emitValue"
+      type="number"
+      class="m-category__input m-category__input--income form-control text-right"
+      placeholder="$"
+      aria-label="Sum input"
+    >
   </div>
 </template>
 
 <script>
 export default {
   data() {
-    return {};
+    return {
+      payloadToReturn: {
+        title: this.payload.title,
+        id: this.payload.id,
+        value: this.payload.value
+      }
+    };
   },
-  props: ["categories"]
+  props: ["payload"],
+  methods: {
+    emitValue(event) {
+      this.payloadToReturn.value = parseInt(event.target.value);
+      this.$emit("emittedValue", this.payloadToReturn);
+    }
+  }
 };
 </script>
 
