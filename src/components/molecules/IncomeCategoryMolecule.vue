@@ -25,7 +25,11 @@ export default {
   props: ["payload"],
   methods: {
     emitValue(event) {
-      this.payloadToReturn.value = parseInt(event.target.value);
+      if (event.target.value === "") {
+        this.payloadToReturn.value = 0;
+      } else {
+        this.payloadToReturn.value = parseInt(event.target.value);
+      }
       this.$emit("emittedValue", this.payloadToReturn);
     }
   }
