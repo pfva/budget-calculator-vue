@@ -1,12 +1,14 @@
 <template>
   <div class="m-total">
     <p class="m-total__title">Total:</p>
-    <p class="m-total__sum m-total__sum--expenses">$ 0</p>
+    <p class="m-total__sum m-total__sum--expenses">$ {{ totalSum || 0 }}</p>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  props: ["totalSum"]
+};
 </script>
 
 <style lang="scss">

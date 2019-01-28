@@ -1,9 +1,28 @@
+/**
+ * This component contains a non-ideal way to nest child components.
+ * It should probably be done with v-for, but this was the only 
+ * approach I found to work when I needed to access each 
+ * ExpensesCategoryMolecule's specific input value
+ * (to be able to sum them all together and pass as prop to
+ * ExpensesTotalMolecule)
+ */
+
 <template>
   <div class="row justify-content-center">
     <div class="o-income col-12 col-md-8">
       <ExpensesHeadingAtom/>
-      <ExpensesCategoryMolecule v-bind:categories="expensesCategories"/>
-      <ExpensesTotalMolecule/>
+      <ExpensesCategoryMolecule v-bind:payload="payload[0]" v-on:emittedValue="sumValues"/>
+      <ExpensesCategoryMolecule v-bind:payload="payload[1]" v-on:emittedValue="sumValues"/>
+      <ExpensesCategoryMolecule v-bind:payload="payload[2]" v-on:emittedValue="sumValues"/>
+      <ExpensesCategoryMolecule v-bind:payload="payload[3]" v-on:emittedValue="sumValues"/>
+      <ExpensesCategoryMolecule v-bind:payload="payload[4]" v-on:emittedValue="sumValues"/>
+      <ExpensesCategoryMolecule v-bind:payload="payload[5]" v-on:emittedValue="sumValues"/>
+      <ExpensesCategoryMolecule v-bind:payload="payload[6]" v-on:emittedValue="sumValues"/>
+      <ExpensesCategoryMolecule v-bind:payload="payload[7]" v-on:emittedValue="sumValues"/>
+      <ExpensesCategoryMolecule v-bind:payload="payload[8]" v-on:emittedValue="sumValues"/>
+      <ExpensesCategoryMolecule v-bind:payload="payload[9]" v-on:emittedValue="sumValues"/>
+      <ExpensesCategoryMolecule v-bind:payload="payload[10]" v-on:emittedValue="sumValues"/>
+      <ExpensesTotalMolecule v-bind:totalSum="totalValues"/>
     </div>
   </div>
 </template>
@@ -21,20 +40,78 @@ export default {
   },
   data() {
     return {
-      expensesCategories: [
-        "Rent/Mortgage",
-        "Electricity",
-        "Heating/Water",
-        "Food/Groceries",
-        "Insurance",
-        "Transportation",
-        "Phone and Internet",
-        "Clothing and shoes",
-        "Debt",
-        "Savings",
-        "Entertainment"
-      ]
+      payload: [
+        {
+          title: "Rent/Mortgage",
+          id: 0,
+          value: 0
+        },
+        {
+          title: "Electricity",
+          id: 1,
+          value: 0
+        },
+        {
+          title: "Heating/Water",
+          id: 2,
+          value: 0
+        },
+        {
+          title: "Food/Groceries",
+          id: 3,
+          value: 0
+        },
+        {
+          title: "Insurance",
+          id: 4,
+          value: 0
+        },
+        {
+          title: "Transportation",
+          id: 5,
+          value: 0
+        },
+        {
+          title: "Phone and Internet",
+          id: 6,
+          value: 0
+        },
+        {
+          title: "Clothing and shoes",
+          id: 7,
+          value: 0
+        },
+        {
+          title: "Debt",
+          id: 8,
+          value: 0
+        },
+        {
+          title: "Savings",
+          id: 9,
+          value: 0
+        },
+        {
+          title: "Entertainment",
+          id: 10,
+          value: 0
+        }
+      ],
+      totalValues: 0
     };
+  },
+  methods: {
+    sumValues(payloadToReturn) {
+      let correctObj = this.payload.filter(
+        obj => obj.id === payloadToReturn.id
+      );
+      this.payload.splice(correctObj[0].id, 1, payloadToReturn);
+      let summedValues = 0;
+      for (let object of this.payload) {
+        summedValues += object.value;
+      }
+      this.totalValues = summedValues;
+    }
   }
 };
 </script>
