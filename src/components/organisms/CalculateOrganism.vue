@@ -1,8 +1,11 @@
 <template>
   <div class="row justify-content-center">
     <div class="col-12 col-md-8 p-4 p-md-0">
-      <ButtonAtom/>
-      <CalculateTextAtom v-bind:sum="sum"/>
+      <ButtonAtom v-on:removeHiddenOnClick="removeHidden"/>
+      <CalculateTextAtom
+        v-bind:sum="sum"
+        v-bind:class="{'u-hidden': isHidden, 'u-fadein': fadeIn}"
+      />
     </div>
   </div>
 </template>
@@ -16,7 +19,19 @@ export default {
     ButtonAtom,
     CalculateTextAtom
   },
-  props: ["sum"]
+  data() {
+    return {
+      isHidden: true,
+      fadeIn: false
+    };
+  },
+  props: ["sum"],
+  methods: {
+    removeHidden() {
+      this.isHidden = false;
+      this.fadeIn = true;
+    }
+  }
 };
 </script>
 

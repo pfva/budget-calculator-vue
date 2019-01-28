@@ -1,11 +1,17 @@
 <template>
-  <button class="a-button a-button--green btn">
+  <button class="a-button a-button--green btn" v-on:click="removeHiddenOnClick">
     <span class="a-button__text">Calculate</span>
   </button>
 </template>
 
 <script>
-export default {};
+export default {
+  methods: {
+    removeHiddenOnClick() {
+      this.$emit("removeHiddenOnClick");
+    }
+  }
+};
 </script>
 
 <style lang="scss">
