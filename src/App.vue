@@ -8,7 +8,7 @@
       <IncomeOrganism v-on:totalIncome="addToIncome"/>
       <ExpensesOrganism v-on:totalExpenses="addToExpenses"/>
       <CalculateOrganism v-bind:sum="incomeMinusExpenses" v-on:clickEvent="handleClickEvent"/>
-      <ChartOrganism v-bind:showChart="showChart"/>
+      <ChartOrganism v-bind:showChart="showChart" v-bind:expenses="expenses"/>
     </main>
 
     <footer class="container-fluid footer o-footer">
@@ -53,7 +53,7 @@ export default {
       this.calculateIncomeMinusExpenses();
     },
     calculateIncomeMinusExpenses() {
-      this.incomeMinusExpenses = this.income - this.expenses;
+      this.incomeMinusExpenses = this.income - this.expenses[0];
     },
     handleClickEvent() {
       this.showChart = true;
