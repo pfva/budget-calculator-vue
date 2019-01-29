@@ -11,33 +11,42 @@ import * as d3 from "d3";
 export default {
   data() {
     return {
-      expensesData: [
-        { label: "Rent/Mortgage", id: 0, value: 2000, percentage: "20%" },
-        { label: "Electricity", id: 1, value: 400, percentage: "4%" },
-        { label: "Heating/Water", id: 2, value: 200, percentage: "2%" },
-        { label: "Food/Groceries", id: 3, value: 1700, percentage: "17%" },
-        { label: "Insurance", id: 4, value: 90, percentage: "0.9%" },
-        { label: "Transportation", id: 5, value: 680, percentage: "6.8%" },
-        { label: "Phone and Internet", id: 6, value: 600, percentage: "6%" },
-        { label: "Clothing and shoes", id: 7, value: 500, percentage: "5%" },
-        { label: "Debt", id: 8, value: 530, percentage: "5.3%" },
-        { label: "Savings", id: 9, value: 2000, percentage: "20%" },
-        { label: "Entertainment", id: 10, value: 1300, percentage: "13%" }
-      ]
+      expensesData: []
     };
   },
-  props: ["showChart"],
+  props: ["showChart", "expenses"],
   mounted() {
     window.onresize = () => {
       this.drawChart();
     };
   },
   updated() {
+    this.transformData();
     this.drawChart();
   },
+  watch: {
+    expenses: function() {
+      this.transformData();
+      this.drawChart();
+    }
+  },
   methods: {
+    transformData() {
+      this.expensesData = [];
+      this.expenses[1].forEach(item => {
+        let percentage =
+          ((item.value / this.expenses[0]) * 100).toFixed(0) + "%";
+
+        this.expensesData.push({
+          label: item.title,
+          value: item.value,
+          percentage: percentage
+        });
+      });
+    },
     drawChart() {
       let data = this.expensesData;
+
       let chartEl = document.querySelector(".o-chart");
       chartEl.innerHTML = "";
       let chartStyles = window.getComputedStyle(chartEl);
