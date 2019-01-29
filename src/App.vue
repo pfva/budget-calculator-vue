@@ -7,8 +7,8 @@
     <main class="container flex-shrink-0">
       <IncomeOrganism v-on:totalIncome="addToIncome"/>
       <ExpensesOrganism v-on:totalExpenses="addToExpenses"/>
-      <CalculateOrganism v-bind:sum="incomeMinusExpenses"/>
-      <ChartOrganism/>
+      <CalculateOrganism v-bind:sum="incomeMinusExpenses" v-on:clickEvent="handleClickEvent"/>
+      <ChartOrganism v-bind:showChart="showChart"/>
     </main>
 
     <footer class="container-fluid footer o-footer">
@@ -39,7 +39,8 @@ export default {
     return {
       income: 0,
       expenses: 0,
-      incomeMinusExpenses: 0
+      incomeMinusExpenses: 0,
+      showChart: false
     };
   },
   methods: {
@@ -53,6 +54,9 @@ export default {
     },
     calculateIncomeMinusExpenses() {
       this.incomeMinusExpenses = this.income - this.expenses;
+    },
+    handleClickEvent() {
+      this.showChart = true;
     }
   }
 };

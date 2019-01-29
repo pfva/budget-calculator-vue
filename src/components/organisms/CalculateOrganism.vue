@@ -1,7 +1,7 @@
 <template>
   <div class="row justify-content-center">
     <div class="col-12 col-md-8 p-4 p-md-0">
-      <ButtonAtom v-on:removeHiddenOnClick="removeHidden"/>
+      <ButtonAtom v-on:buttonClickEvent="handleClickEvent"/>
       <CalculateTextAtom
         v-bind:sum="sum"
         v-bind:class="{'u-hidden': isHidden, 'u-fadein': fadeIn}"
@@ -27,9 +27,16 @@ export default {
   },
   props: ["sum"],
   methods: {
+    handleClickEvent() {
+      this.removeHidden();
+      this.fireClickEvent();
+    },
     removeHidden() {
       this.isHidden = false;
       this.fadeIn = true;
+    },
+    fireClickEvent() {
+      this.$emit("clickEvent");
     }
   }
 };

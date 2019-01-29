@@ -1,5 +1,5 @@
 <template>
-  <button class="a-button a-button--green btn" v-on:click="removeHiddenOnClick">
+  <button class="a-button a-button--green btn" v-on:click="fireClickEvent">
     <span class="a-button__text">Calculate</span>
   </button>
 </template>
@@ -7,8 +7,8 @@
 <script>
 export default {
   methods: {
-    removeHiddenOnClick() {
-      this.$emit("removeHiddenOnClick");
+    fireClickEvent() {
+      this.$emit("buttonClickEvent");
     }
   }
 };

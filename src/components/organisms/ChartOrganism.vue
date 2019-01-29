@@ -1,7 +1,7 @@
 <template>
   <div class="row justify-content-center">
     <div class="col-12 col-md-8 d-flex justify-content-center">
-      <svg class="o-chart"></svg>
+      <svg class="o-chart" v-show="showChart" v-bind:class="{'u-fadein': showChart}"></svg>
     </div>
   </div>
 </template>
@@ -26,11 +26,14 @@ export default {
       ]
     };
   },
+  props: ["showChart"],
   mounted() {
-    this.drawChart();
     window.onresize = () => {
       this.drawChart();
     };
+  },
+  updated() {
+    this.drawChart();
   },
   methods: {
     drawChart() {
@@ -151,7 +154,7 @@ export default {
   }
 
   &--invisible-height {
-    height: 1px;
+    height: 0px;
   }
 
   g {
