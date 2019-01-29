@@ -34,6 +34,14 @@ export default {
     removeHidden() {
       this.isHidden = false;
       this.fadeIn = true;
+
+      window.setTimeout(function() {
+        window.scrollBy({
+          left: 0,
+          top: 450,
+          behavior: "smooth"
+        });
+      }, 200);
     },
     fireClickEvent() {
       this.$emit("clickEvent");
