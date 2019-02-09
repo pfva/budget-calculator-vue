@@ -9,8 +9,7 @@
 
 <script>
 export default {
-  name: "SiteHeaderOrganism",
-  data: function() {
+  data() {
     return {
       title: "Online Budget",
       subtext: "Create your own budget and see what you spend your money on"
