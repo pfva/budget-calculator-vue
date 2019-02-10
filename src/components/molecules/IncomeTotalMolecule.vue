@@ -12,7 +12,6 @@ export default {
 </script>
 
 <style lang="scss">
-@import "../../../scss/main.scss";
 .m-total {
   display: flex;
   width: 100%;

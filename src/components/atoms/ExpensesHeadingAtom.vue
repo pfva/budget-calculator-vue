@@ -12,7 +12,6 @@ export default {};
 </script>
 
 <style lang="scss">
-@import "../../../scss/main.scss";
 .a-expensesheading {
   display: flex;
   justify-content: space-between;

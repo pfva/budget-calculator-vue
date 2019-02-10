@@ -12,7 +12,6 @@ export default {};
 </script>
 
 <style lang="scss">
-@import "../../../scss/main.scss";
 .a-incomeheading {
   display: flex;
   justify-content: space-between;

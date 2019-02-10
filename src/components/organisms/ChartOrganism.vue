@@ -152,7 +152,6 @@ export default {
 </script>
 
 <style lang="scss">
-@import "../../../scss/main.scss";
 .o-chart {
   width: calc(100% - 18px);
   height: 460px;

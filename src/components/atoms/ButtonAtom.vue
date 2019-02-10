@@ -15,7 +15,6 @@ export default {
 </script>
 
 <style lang="scss">
-@import "../../../scss/main.scss";
 .a-button {
   width: 100%;
   height: 60px;

@@ -20,7 +20,6 @@ export default {
 </script>
 
 <style lang="scss">
-@import "../../../scss/main.scss";
 .o-siteheader {
   color: $white;
   font-family: $heading-font-family;

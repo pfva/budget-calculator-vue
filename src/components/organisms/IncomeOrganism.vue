@@ -69,7 +69,6 @@ export default {
 </script>
 
 <style lang="scss">
-@import "../../../scss/main.scss";
 .o-income {
   margin-bottom: $spacing * 2;
   padding: $spacing * 3;
